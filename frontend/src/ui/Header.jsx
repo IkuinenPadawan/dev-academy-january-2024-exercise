@@ -2,7 +2,7 @@ import SearchStation from "../features/SearchStation";
 
 function Header() {
   return (
-    <header>
+    <header className="p-4">
       <SearchStation />
     </header>
   );
