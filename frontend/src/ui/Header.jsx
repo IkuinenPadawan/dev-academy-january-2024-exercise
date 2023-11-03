@@ -2,9 +2,9 @@ import SearchStation from "../features/SearchStation";
 
 function Header() {
   return (
-    <div>
+    <header>
       <SearchStation />
-    </div>
+    </header>
   );
 }
 
