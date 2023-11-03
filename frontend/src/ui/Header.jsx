@@ -1,5 +1,11 @@
+import SearchStation from "../features/SearchStation";
+
 function Header() {
-  return <div></div>;
+  return (
+    <div>
+      <SearchStation />
+    </div>
+  );
 }
 
 export default Header;
