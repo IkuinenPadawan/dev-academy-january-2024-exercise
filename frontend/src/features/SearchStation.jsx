@@ -28,7 +28,7 @@ function SearchStation() {
         placeholder="Search station..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="focus:ring-2 focus:ring-amber-600 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 bg-slate-700 rounded-md py-2 pl-10 ring-1 ring-slate-900 shadow-sm"
+        className="focus:ring-2 focus:ring-amber-600 focus:outline-none caret-amber-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded-md py-2 pl-10 ring-1 ring-slate-900 shadow-sm"
         type="text"
       />
     </form>
