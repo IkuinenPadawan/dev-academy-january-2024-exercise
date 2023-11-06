@@ -13,3 +13,8 @@ const pool = new Pool({
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
 });
+
+exports.query = (text, params, callback) => {
+  const result = pool.query(text, params, callback);
+  return result;
+};
