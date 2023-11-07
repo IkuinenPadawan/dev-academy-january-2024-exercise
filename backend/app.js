@@ -1,9 +1,11 @@
 const express = require('express');
 
+const stationRouter = require('./routes/stationRoutes');
+
 const app = express();
 
-app.use('/', (req, res) => {
-  res.send('Hello from api!');
-});
+app.use(express.json());
+
+app.use('/api/stations', stationRouter);
 
 module.exports = app;
