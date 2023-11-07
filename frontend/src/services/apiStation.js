@@ -9,3 +9,11 @@ export async function getStations() {
   console.log(data);
   return data;
 }
+
+export async function getStation(id) {
+  const res = await fetch(`${API_URL}/stations/${id}`);
+  if (!res.ok) throw Error(`Couldn't find order #${id}`);
+
+  const { data } = await res.json();
+  return data;
+}
