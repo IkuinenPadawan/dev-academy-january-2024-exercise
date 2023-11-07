@@ -1,7 +1,7 @@
 const express = require('express');
 
 const stationRouter = require('./routes/stationRoutes');
-const journeyRouter = require('./routes/journeyRouter');
+const journeyRouter = require('./routes/journeyRoutes');
 
 const app = express();
 
