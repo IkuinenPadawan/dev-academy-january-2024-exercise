@@ -5,7 +5,7 @@ exports.getAllStations = async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      data: results,
+      stations: results.rows,
     },
   });
   next();
@@ -18,7 +18,7 @@ exports.getStation = async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      data: results,
+      station: results.rows[0],
     },
   });
   next();
