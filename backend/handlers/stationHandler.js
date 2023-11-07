@@ -12,9 +12,9 @@ exports.getAllStations = async (req, res, next) => {
 };
 
 exports.getStation = async (req, res, next) => {
-  const results = await db.query(
-    `SELECT * FROM station WHERE id = ${req.params.id}`,
-  );
+  const results = await db.query('SELECT * FROM station WHERE id = $1', [
+    req.params.id,
+  ]);
   res.status(200).json({
     status: 'success',
     data: {
