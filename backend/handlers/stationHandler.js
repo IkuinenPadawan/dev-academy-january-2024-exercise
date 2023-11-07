@@ -11,10 +11,15 @@ exports.getAllStations = async (req, res, next) => {
   next();
 };
 
-exports.getStation = (req, res, next) => {
+exports.getStation = async (req, res, next) => {
+  const results = await db.query(
+    `SELECT * FROM station WHERE id = ${req.params.id}`,
+  );
   res.status(200).json({
     status: 'success',
-    message: 'Not yet implemented',
+    data: {
+      data: results,
+    },
   });
   next();
 };
