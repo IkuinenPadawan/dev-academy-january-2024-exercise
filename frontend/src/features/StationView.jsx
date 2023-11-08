@@ -32,8 +32,8 @@ function StationView() {
   );
 }
 
-export async function loader() {
-  const station = await getStation("511");
+export async function loader({ params }) {
+  const station = await getStation(params.stationId);
   return station;
 }
 
