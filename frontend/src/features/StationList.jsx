@@ -1,4 +1,5 @@
 import StationItem from "./StationItem";
+import { getStations } from "../services/apiStation";
 
 function StationList() {
   return (
@@ -6,6 +7,11 @@ function StationList() {
       <StationItem />
     </ul>
   );
+}
+
+export async function loader() {
+  const stations = await getStations();
+  return stations;
 }
 
 export default StationList;
