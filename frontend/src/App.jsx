@@ -1,13 +1,21 @@
-import Header from "./ui/Header";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import StationList from "./features/StationList";
+import StationView from "./features/StationView";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <StationList />,
+  },
+  {
+    path: "/station",
+    element: <StationView />,
+  },
+]);
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <StationList />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
