@@ -1,4 +1,9 @@
+import { useLoaderData } from "react-router-dom";
+import { getStation, getJourneyStats } from "../services/apiStation";
+
 function StationView() {
+  const station = useLoaderData();
+
   return (
     <div className="p-4 bg-slate-700 rounded shadow-md">
       <h1 className="text-2xl text-slate-50">Station name</h1>
@@ -25,6 +30,19 @@ function StationView() {
       </div>
     </div>
   );
+}
+
+export async function loader({ params }) {
+  const station = await getStation(params.stationId);
+  const journeyData = await getJourneyStats(params.stationId);
+
+  // Combine station and journeyData into one object
+  const combinedData = {
+    station: station,
+    journeyData: journeyData,
+  };
+
+  return combinedData;
 }
 
 export default StationView;
