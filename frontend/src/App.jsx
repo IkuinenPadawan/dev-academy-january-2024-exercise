@@ -1,7 +1,11 @@
+// Module imports
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+// Custom Components
 import StationList from "./features/StationList";
 import StationView from "./features/StationView";
+
+// Loaders
 import { loader as stationLoader } from "./features/StationView";
 import { loader as stationListLoader } from "./features/StationList";
 
