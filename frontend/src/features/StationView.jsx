@@ -1,3 +1,5 @@
+import { getStation } from "../services/apiStation";
+
 function StationView() {
   return (
     <div className="p-4 bg-slate-700 rounded shadow-md">
@@ -25,6 +27,11 @@ function StationView() {
       </div>
     </div>
   );
+}
+
+export async function loader() {
+  const station = await getStation("511");
+  return station;
 }
 
 export default StationView;
