@@ -6,7 +6,9 @@ function StationList() {
   const stations = useLoaderData();
   return (
     <ul role="list" className="m-3 flex flex-col gap-2">
-      <StationItem />
+      {stations.stations.map((station) => (
+        <StationItem key={station.id} />
+      ))}
     </ul>
   );
 }
