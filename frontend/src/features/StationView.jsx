@@ -1,6 +1,9 @@
+import { useLoaderData } from "react-router-dom";
 import { getStation } from "../services/apiStation";
 
 function StationView() {
+  const station = useLoaderData();
+
   return (
     <div className="p-4 bg-slate-700 rounded shadow-md">
       <h1 className="text-2xl text-slate-50">Station name</h1>
