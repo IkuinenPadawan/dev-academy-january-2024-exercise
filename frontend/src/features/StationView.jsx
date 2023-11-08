@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { getStation } from "../services/apiStation";
+import { getStation, getJourneyStats } from "../services/apiStation";
 
 function StationView() {
   const station = useLoaderData();
@@ -34,6 +34,7 @@ function StationView() {
 
 export async function loader({ params }) {
   const station = await getStation(params.stationId);
+  const journeyData = await getJourneyStats(params.stationId);
   return station;
 }
 
