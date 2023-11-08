@@ -4,6 +4,17 @@ import { getStation, getJourneyStats } from "../services/apiStation";
 function StationView() {
   const stationData = useLoaderData();
 
+  // Extract properties from station
+  const { station_name, station_address } = stationData.station.station;
+
+  // Extract properties from journeyData
+  const {
+    numberOfJourneysStarting,
+    numberOfJourneysEnding,
+    averageDistanceOfJourneysStarting,
+    averageDurationOfJourneysStarting,
+  } = stationData.journeyData;
+
   return (
     <div className="p-4 bg-slate-700 rounded shadow-md">
       <h1 className="text-2xl text-slate-50">Station name</h1>
