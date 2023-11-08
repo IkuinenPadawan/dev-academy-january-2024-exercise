@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { getStation, getJourneyStats } from "../services/apiStation";
 
 function StationView() {
-  const station = useLoaderData();
+  const stationData = useLoaderData();
 
   return (
     <div className="p-4 bg-slate-700 rounded shadow-md">
