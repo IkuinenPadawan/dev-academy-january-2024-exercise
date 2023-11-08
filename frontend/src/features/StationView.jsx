@@ -35,7 +35,14 @@ function StationView() {
 export async function loader({ params }) {
   const station = await getStation(params.stationId);
   const journeyData = await getJourneyStats(params.stationId);
-  return station;
+
+  // Combine station and journeyData into one object
+  const combinedData = {
+    station: station,
+    journeyData: journeyData,
+  };
+
+  return combinedData;
 }
 
 export default StationView;
