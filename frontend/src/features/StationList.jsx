@@ -7,7 +7,7 @@ function StationList() {
   return (
     <ul role="list" className="m-3 flex flex-col gap-2">
       {stations.stations.map((station) => (
-        <StationItem key={station.id} />
+        <StationItem station={station} key={station.id} />
       ))}
     </ul>
   );
