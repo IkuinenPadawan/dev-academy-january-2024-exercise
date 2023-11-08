@@ -3,13 +3,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StationList from "./features/StationList";
 import StationView from "./features/StationView";
 import { loader as stationLoader } from "./features/StationView";
-import { loader as stationsLoader } from "./features/StationList";
+import { loader as stationListLoader } from "./features/StationList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <StationList />,
-    loader: stationsLoader,
+    loader: stationListLoader,
   },
   {
     path: "/station/:stationId",
