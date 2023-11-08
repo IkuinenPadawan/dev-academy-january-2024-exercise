@@ -3,6 +3,6 @@ const journeyHandler = require('./../handlers/journeyHandler');
 
 const router = express.Router();
 
-router.route('/').get(journeyHandler.getJourneyStats);
+router.route('/stationstats/:stationId').get(journeyHandler.getJourneyStats);
 
 module.exports = router;
