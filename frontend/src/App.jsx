@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <StationList />,
   },
   {
-    path: "/station",
+    path: "/station/:stationId",
     element: <StationView />,
   },
 ]);
