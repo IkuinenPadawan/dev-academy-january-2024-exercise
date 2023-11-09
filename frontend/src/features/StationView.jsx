@@ -26,7 +26,7 @@ function StationView() {
   );
 
   return (
-    <div className="max-w-full m-4 bg-slate-700 rounded-xl shadow-md text-center">
+    <div className="max-w-full m-4 pb-4 bg-slate-700 rounded-xl shadow-md text-center">
       <img
         className="rounded-t-xl"
         src="https://images.pexels.com/photos/34646/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
