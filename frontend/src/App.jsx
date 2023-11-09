@@ -7,13 +7,11 @@ import StationView from "./features/StationView";
 
 // Loaders
 import { loader as stationLoader } from "./features/StationView";
-import { loader as stationListLoader } from "./features/StationList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <StationList />,
-    loader: stationListLoader,
   },
   {
     path: "/station/:stationId",
