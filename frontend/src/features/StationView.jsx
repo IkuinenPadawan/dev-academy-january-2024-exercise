@@ -8,12 +8,22 @@ function StationView() {
   const { station_name, station_address } = stationData.station.station;
 
   // Extract properties from journeyData
-  const {
+  let {
     numberOfJourneysStarting,
     numberOfJourneysEnding,
     averageDistanceOfJourneysStarting,
     averageDurationOfJourneysStarting,
   } = stationData.journeyData;
+
+  // Round distance
+  averageDistanceOfJourneysStarting = Math.round(
+    averageDistanceOfJourneysStarting / 100
+  );
+
+  // Round duration
+  averageDurationOfJourneysStarting = Math.round(
+    averageDurationOfJourneysStarting / 60
+  );
 
   return (
     <div className="max-w-full m-4 bg-slate-700 rounded-xl shadow-md text-center">
@@ -41,7 +51,7 @@ function StationView() {
         </div>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-extrabold text-blue-300">
-            {averageDistanceOfJourneysStarting}
+            {averageDistanceOfJourneysStarting} km
           </h2>
           <h2 className="text-lg text-slate-50">
             Average distance traveled from
@@ -49,7 +59,7 @@ function StationView() {
         </div>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-extrabold text-blue-300">
-            {averageDurationOfJourneysStarting}
+            {averageDurationOfJourneysStarting} min
           </h2>
           <h2 className="text-lg text-slate-50">Average time traveled from</h2>
         </div>
