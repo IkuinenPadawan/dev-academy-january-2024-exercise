@@ -18,6 +18,9 @@ function Pagination({ count, searchParams, setSearchParams }) {
     setSearchParams(searchParams);
   }
 
+  // If no more than 1 page hide pagination
+  if (pageCount <= 1) return null;
+
   return (
     <div className="mx-3 flex flex-col md:flex-row md:justify-between text-slate-50">
       {" "}
