@@ -7,8 +7,16 @@ function Pagination({ count, searchParams, setSearchParams }) {
 
   return (
     <div className="flex flex-row justify-between text-slate-50">
-      <p>
-        Showing <span>1</span> to <span>10</span> of <span>50</span> results
+      <p className="flex gap-1">
+        Showing{" "}
+        <span className="font-bold font">
+          {(currentPage - 1) * PAGE_LIMIT + 1}
+        </span>{" "}
+        to{" "}
+        <span className="font-bold">
+          {currentPage === pageCount ? count : currentPage * PAGE_LIMIT}
+        </span>{" "}
+        of <span className="font-bold">{count}</span> results
       </p>
       <div>
         <button>{"<"} Previous</button>
