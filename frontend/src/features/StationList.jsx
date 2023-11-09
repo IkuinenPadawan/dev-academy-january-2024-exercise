@@ -3,16 +3,19 @@ import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
 import { getStations } from "../services/apiStation";
 
+import { useSearchParams } from "react-router-dom";
+
 function StationList() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     fetchStations();
-  }, []);
+  }, [searchParams]);
 
   const fetchStations = async () => {
-    const stations = await getStations();
+    const stations = await getStations(searchParams.get("page"));
     setData(stations);
     setIsLoading(false);
   };
@@ -26,7 +29,11 @@ function StationList() {
             <StationItem station={station} key={station.id} />
           ))}
       </ul>
-      <Pagination />
+      <Pagination
+        count={100}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+      />
     </div>
   );
 }
