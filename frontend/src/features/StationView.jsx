@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { getStation, getJourneyStats } from "../services/apiStation";
+import LocationIcon from "./LocationIcon";
 
 function StationView() {
   const stationData = useLoaderData();
@@ -32,9 +33,12 @@ function StationView() {
         src="https://images.pexels.com/photos/34646/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="Image of a bike station"
       />
-      <div className="my-5">
-        <h1 className="text-2xl text-slate-50">{station_name}</h1>
-        <h2 className="text-lg text-slate-400">{station_address}</h2>
+      <div className="flex flex-row my-5 justify-center items-center">
+        <LocationIcon />
+        <div>
+          <h1 className="text-2xl text-slate-50">{station_name}</h1>
+          <h2 className="text-lg text-slate-400">{station_address}</h2>
+        </div>
       </div>
       <dl className="grid grid-cols-2 gap-8 mx-auto p-4">
         <div className="flex flex-col items-center justify-center">
