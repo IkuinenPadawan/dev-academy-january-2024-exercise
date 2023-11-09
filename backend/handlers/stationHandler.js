@@ -2,7 +2,9 @@ const db = require('../database/index');
 
 exports.getAllStations = async (req, res, next) => {
   try {
-    const results = await db.query('SELECT * FROM station');
+    const { page, limit } = req.query;
+    const query = `SELECT * FROM station LIMIT $2 OFFSET (($1 - 1) * $2)`;
+    const results = await db.query(query, [page, limit]);
     res.status(200).json({
       status: 'success',
       data: {
