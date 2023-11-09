@@ -28,9 +28,21 @@ function Pagination({ count, searchParams, setSearchParams }) {
         </span>{" "}
         of <span className="font-bold">{count}</span> results
       </p>
-      <div>
-        <button>{"<"} Previous</button>
-        <button>Next {">"}</button>
+      <div className="inline-flex text-slate-50 text-sm">
+        <button
+          className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2"
+          onClick={prevPage}
+          disabled={currentPage === 1}
+        >
+          {"<"} Previous
+        </button>
+        <button
+          className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2"
+          onClick={nextPage}
+          disabled={currentPage === pageCount}
+        >
+          Next {">"}
+        </button>
       </div>
     </div>
   );
