@@ -1,7 +1,8 @@
 const API_URL = "http://localhost:3000/api";
 
-export async function getStations() {
-  const res = await fetch(`${API_URL}/stations`);
+export async function getStations(page = 1, limit = 10) {
+  const res = await fetch(`${API_URL}/stations?page=${page}&limit=${limit}`);
+  console.log(res);
 
   if (!res.ok) throw Error("Failed getting stations");
 
