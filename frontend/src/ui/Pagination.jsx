@@ -19,7 +19,8 @@ function Pagination({ count, searchParams, setSearchParams }) {
   }
 
   return (
-    <div className="flex flex-row justify-between text-slate-50">
+    <div className="mx-3 flex flex-col md:flex-row md:justify-between text-slate-50">
+      {" "}
       <p className="flex gap-1">
         Showing{" "}
         <span className="font-bold font">{(currentPage - 1) * 10 + 1}</span> to{" "}
