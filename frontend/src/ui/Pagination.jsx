@@ -1,4 +1,10 @@
-function Pagination() {
+function Pagination({ count, searchParams, setSearchParams }) {
+  const currentPage = !searchParams.get("page")
+    ? 1
+    : Number(searchParams.get("page"));
+
+  const pageCount = Math.ceil(count / 10);
+
   return (
     <div className="flex flex-row justify-between text-slate-50">
       <p>
