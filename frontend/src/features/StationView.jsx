@@ -16,33 +16,42 @@ function StationView() {
   } = stationData.journeyData;
 
   return (
-    <div className="p-4 bg-slate-700 rounded shadow-md">
-      <h1 className="text-2xl text-slate-50">{station_name}</h1>
-      <h2 className="text-lg text-slate-50">{station_address}</h2>
-      <dl className="grid grid-cols-2 gap-8 mx-auto">
+    <div className="max-w-full m-4 bg-slate-700 rounded-xl shadow-md text-center">
+      <img
+        className="rounded-t-xl"
+        src="https://images.pexels.com/photos/34646/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="Image of a bike station"
+      />
+      <div className="my-5">
+        <h1 className="text-2xl text-slate-50">{station_name}</h1>
+        <h2 className="text-lg text-slate-400">{station_address}</h2>
+      </div>
+      <dl className="grid grid-cols-2 gap-8 mx-auto p-4">
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-lg text-slate-50">{numberOfJourneysStarting}</h2>
-          <h2 className="text-lg text-slate-50">Journeys starting here</h2>
+          <h2 className="text-2xl font-extrabold text-blue-300">
+            {numberOfJourneysStarting}
+          </h2>
+          <h2 className="text-lg text-slate-50">Journeys starting</h2>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-lg text-slate-50">{numberOfJourneysEnding}</h2>
-          <h2 className="text-lg text-slate-50">Journeys ending here</h2>
+          <h2 className="text-2xl font-extrabold text-blue-300">
+            {numberOfJourneysEnding}
+          </h2>
+          <h2 className="text-lg text-slate-50">Journeys ending</h2>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-lg text-slate-50">
+          <h2 className="text-2xl font-extrabold text-blue-300">
             {averageDistanceOfJourneysStarting}
           </h2>
           <h2 className="text-lg text-slate-50">
-            Average distance traveled from here
+            Average distance traveled from
           </h2>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-lg text-slate-50">
+          <h2 className="text-2xl font-extrabold text-blue-300">
             {averageDurationOfJourneysStarting}
           </h2>
-          <h2 className="text-lg text-slate-50">
-            Average time traveled from here
-          </h2>
+          <h2 className="text-lg text-slate-50">Average time traveled from</h2>
         </div>
       </dl>
     </div>
