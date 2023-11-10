@@ -1,6 +1,11 @@
+// Module imports
 import { useLoaderData } from "react-router-dom";
+
+// Custom components
+import LocationIcon from "..ui/LocationIcon";
+
+// API functions
 import { getStation, getJourneyStats } from "../services/apiStation";
-import LocationIcon from "./LocationIcon";
 
 function StationView() {
   const stationData = useLoaderData();
@@ -72,6 +77,7 @@ function StationView() {
   );
 }
 
+// Loader function to fetch data on render
 export async function loader({ params }) {
   const station = await getStation(params.stationId);
   const journeyData = await getJourneyStats(params.stationId);
