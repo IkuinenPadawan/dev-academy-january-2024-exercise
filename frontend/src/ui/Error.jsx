@@ -5,10 +5,15 @@ function Error() {
   const error = useRouteError();
 
   return (
-    <div>
-      <h1>Something went wrong 😢</h1>
+    <div className="flex flex-col gap-2 text-slate-50 m-3">
+      <h1 className="font-2xl font-bold">Something went wrong 😢</h1>
       <p>{error.data || error.message}</p>
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+      <button
+        className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
+        onClick={() => navigate(-1)}
+      >
+        &larr; Go back
+      </button>
     </div>
   );
 }
