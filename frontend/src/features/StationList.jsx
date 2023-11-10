@@ -28,7 +28,8 @@ function StationList() {
   // Data fetch
   const fetchStations = async () => {
     const order = ascending ? "asc" : "desc";
-    const stations = await getStations(page, 10, order);
+    const search = searchParams.get("search");
+    const stations = await getStations(page, 10, order, search);
     setData(stations);
     setCount(stations.stationCount[0].count);
     setIsLoading(false);
