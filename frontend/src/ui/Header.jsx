@@ -1,4 +1,4 @@
-import SearchStation from "../features/SearchStation";
+// import SearchStation from "../features/SearchStation";
 
 function Header() {
   return (
@@ -6,7 +6,7 @@ function Header() {
       <h1 className="uppercase tracking-widest text-bold text-slate-50">
         Bike Station Info
       </h1>
-      <SearchStation />
+      {/* <SearchStation /> */}
     </header>
   );
 }
