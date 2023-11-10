@@ -8,6 +8,15 @@ exports.getAllStations = async (req, res, next) => {
     // Sort
     if (req.query.sortBy) {
       query += ` ORDER BY ${req.query.sortBy}`;
+
+      // Determine order (ASC or DESC)
+      if (
+        req.query.order &&
+        (req.query.order.toUpperCase() === 'ASC' ||
+          req.query.order.toUpperCase() === 'DESC')
+      ) {
+        query += ` ${req.query.order.toUpperCase()}`;
+      }
     }
 
     // Pagination
