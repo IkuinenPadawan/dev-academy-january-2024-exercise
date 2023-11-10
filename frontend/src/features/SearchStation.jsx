@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 function SearchStation() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const search = searchParams.get("search");
+  const search = searchParams.get("search") || "";
 
   return (
     <form className="group relative bg-slate-700">
