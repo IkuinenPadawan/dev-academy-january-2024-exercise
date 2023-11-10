@@ -5,6 +5,16 @@ function SearchStation() {
 
   const search = searchParams.get("search") || "";
 
+  const handleSearchChange = (e) => {
+    setSearchParams(
+      (prev) => {
+        prev.set("search", e.target.value);
+        return prev;
+      },
+      { replace: true }
+    );
+  };
+
   return (
     <form className="group relative bg-slate-700">
       <svg
@@ -24,15 +34,7 @@ function SearchStation() {
         placeholder="Search station..."
         id="search"
         value={search}
-        onChange={(e) =>
-          setSearchParams(
-            (prev) => {
-              prev.set("search", e.target.value);
-              return prev;
-            },
-            { replace: true }
-          )
-        }
+        onChange={handleSearchChange}
         className="focus:ring-2 focus:ring-amber-600 focus:outline-none caret-amber-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded-md py-2 pl-10 ring-1 ring-slate-900 shadow-sm"
         type="text"
       />
