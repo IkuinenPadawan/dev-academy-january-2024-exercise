@@ -7,7 +7,40 @@ function Sort({ ascending, setAscending }) {
       type="button"
       onClick={() => setAsceding(!ascending)}
     >
-      Sort by station name
+      Sort by station name{" "}
+      {ascending ? (
+        <svg
+          className="w-2.5 h-2.5 ms-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m1 1 4 4 4-4"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-2.5 h-2.5 ms-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M1 5 5 1 9 5"
+          />
+        </svg>
+      )}
     </button>
   );
 }
