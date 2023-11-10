@@ -34,14 +34,14 @@ function Pagination({ count, searchParams, setSearchParams }) {
       </p>
       <div className="inline-flex text-slate-50 text-sm">
         <button
-          className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2"
+          className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={prevPage}
           disabled={currentPage === 1}
         >
           {"<"} Previous
         </button>
         <button
-          className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2"
+          className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={nextPage}
           disabled={currentPage === pageCount}
         >
