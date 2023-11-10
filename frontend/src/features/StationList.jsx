@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
 import Sort from "../ui/Sort";
+import SearchStation from "./SearchStation";
 
 // API functions
 import { getStations } from "../services/apiStation";
@@ -37,6 +38,7 @@ function StationList() {
 
   return (
     <div>
+      <SearchStation />
       <Sort ascending={ascending} setAscending={setAscending} />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
