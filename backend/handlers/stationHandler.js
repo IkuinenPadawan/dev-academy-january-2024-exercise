@@ -26,6 +26,7 @@ exports.getAllStations = async (req, res, next) => {
       data: {
         stations: results.rows,
         stationCount: stationCount.rows,
+        rowCount: results.rowCount,
       },
     });
   } catch (err) {
