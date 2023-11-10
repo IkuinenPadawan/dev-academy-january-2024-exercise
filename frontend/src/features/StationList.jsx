@@ -15,6 +15,7 @@ function StationList() {
   const [count, setCount] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [ascending, setAscending] = useState(true);
 
   // Set current page number
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
@@ -34,7 +35,7 @@ function StationList() {
 
   return (
     <div>
-      <Sort />
+      <Sort ascending={ascending} setAscending={setAscending} />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
         <ul role="list" className="m-3 flex flex-col gap-2">
