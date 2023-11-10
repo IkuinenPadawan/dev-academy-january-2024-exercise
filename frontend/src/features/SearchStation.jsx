@@ -5,11 +5,17 @@ function SearchStation() {
 
   const search = searchParams.get("search") || "";
 
+  // Add input to searchParams when typed
   const handleSearchChange = (e) => {
     setSearchParams(
       (prev) => {
-        prev.set("search", e.target.value);
-        return prev;
+        // Delete search param if input empty
+        if (e.target.value.trim() === "") {
+          searchParams.delete("search");
+        } else {
+          prev.set("search", e.target.value);
+          return prev;
+        }
       },
       { replace: true }
     );
