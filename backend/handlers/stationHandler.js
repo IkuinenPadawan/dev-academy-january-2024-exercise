@@ -1,31 +1,17 @@
 const db = require('../database/index');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.getAllStations = async (req, res, next) => {
   try {
     const { page, limit } = req.query;
-    let query = 'SELECT * FROM station';
+    const query = 'SELECT * FROM station';
 
-    // Sort
-    if (req.query.sortBy) {
-      query += ` ORDER BY ${req.query.sortBy}`;
-
-      // Determine order (ASC or DESC)
-      if (
-        req.query.order &&
-        (req.query.order.toUpperCase() === 'ASC' ||
-          req.query.order.toUpperCase() === 'DESC')
-      ) {
-        query += ` ${req.query.order.toUpperCase()}`;
-      }
-    }
-
-    // Pagination
-    query += ` LIMIT $2 OFFSET (($1 - 1) * $2)`;
     const stationCount = await db.query(
       'SELECT count(*) as count FROM station',
     );
 
-    const results = await db.query(query, [page, limit]);
+    const features = new APIFeatures(query, req.query).paginate().sort();
+    const results = await db.query(features.query, [page, limit]);
 
     res.status(200).json({
       status: 'success',
