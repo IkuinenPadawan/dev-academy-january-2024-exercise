@@ -1,21 +1,33 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function SearchStation() {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!query) return;
-    setQuery("");
-  }
+  const search = searchParams.get("search") || "";
+
+  // Add input to searchParams when typed
+  const handleSearchChange = (e) => {
+    setSearchParams(
+      (prev) => {
+        // Delete search param if input empty
+        if (e.target.value.trim() === "") {
+          searchParams.delete("search");
+        } else {
+          prev.set("search", e.target.value);
+          return prev;
+        }
+      },
+      { replace: true }
+    );
+  };
 
   return (
-    <form className="group relative bg-slate-700" onSubmit={handleSubmit}>
+    <div className="group relative bg-slate-700 m-3">
       <svg
         width="20"
         height="20"
         fill="currentColor"
-        className="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-amber-600"
+        className="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-600"
         aria-hidden="true"
       >
         <path
@@ -26,12 +38,13 @@ function SearchStation() {
       </svg>
       <input
         placeholder="Search station..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="focus:ring-2 focus:ring-amber-600 focus:outline-none caret-amber-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded-md py-2 pl-10 ring-1 ring-slate-900 shadow-sm"
+        id="search"
+        value={search}
+        onChange={handleSearchChange}
+        className=" focus:ring-2 focus:ring-blue-500 focus:outline-none caret-blue-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded shadow-md py-2 pl-10"
         type="text"
       />
-    </form>
+    </div>
   );
 }
 //"focus:ring-2 focus:ring-blue-500 focus:outline-none rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"  aria-label="Filter projects" >

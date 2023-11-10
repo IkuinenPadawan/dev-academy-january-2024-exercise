@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
 import Sort from "../ui/Sort";
+import SearchStation from "./SearchStation";
 
 // API functions
 import { getStations } from "../services/apiStation";
@@ -28,14 +29,16 @@ function StationList() {
   // Data fetch
   const fetchStations = async () => {
     const order = ascending ? "asc" : "desc";
-    const stations = await getStations(page, 10, order);
+    const search = searchParams.get("search");
+    const stations = await getStations(page, 10, order, search);
     setData(stations);
-    setCount(stations.stationCount[0].count);
+    setCount(stations.stationCount);
     setIsLoading(false);
   };
 
   return (
     <div>
+      <SearchStation />
       <Sort ascending={ascending} setAscending={setAscending} />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
