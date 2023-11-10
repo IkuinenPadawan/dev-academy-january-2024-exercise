@@ -1,16 +1,12 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function SearchStation() {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!query) return;
-    setQuery("");
-  }
+  const search = searchParams.get("search");
 
   return (
-    <form className="group relative bg-slate-700" onSubmit={handleSubmit}>
+    <form className="group relative bg-slate-700">
       <svg
         width="20"
         height="20"
@@ -26,8 +22,17 @@ function SearchStation() {
       </svg>
       <input
         placeholder="Search station..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        id="search"
+        value={search}
+        onChange={(e) =>
+          setSearchParams(
+            (prev) => {
+              prev.set("search", e.target.value);
+              return prev;
+            },
+            { replace: true }
+          )
+        }
         className="focus:ring-2 focus:ring-amber-600 focus:outline-none caret-amber-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded-md py-2 pl-10 ring-1 ring-slate-900 shadow-sm"
         type="text"
       />
