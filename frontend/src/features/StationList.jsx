@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 // Custom components
 import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
+import Sort from "../ui/Sort";
 
 // API functions
 import { getStations } from "../services/apiStation";
@@ -33,6 +34,7 @@ function StationList() {
 
   return (
     <div>
+      <Sort />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
         <ul role="list" className="m-3 flex flex-col gap-2">
