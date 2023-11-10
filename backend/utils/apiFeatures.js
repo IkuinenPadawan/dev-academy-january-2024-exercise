@@ -22,7 +22,12 @@ class APIFeatures {
     return this;
   }
 
-  paginate() {}
+  paginate() {
+    this.query += ` LIMIT $2 OFFSET (($1 - 1) * $2)`;
+
+    // return this for chaining
+    return this;
+  }
 }
 
 module.exports = APIFeatures;
