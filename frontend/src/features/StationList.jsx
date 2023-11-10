@@ -23,7 +23,7 @@ function StationList() {
   // Fetch stations data on searchParam change
   useEffect(() => {
     fetchStations();
-  }, [searchParams]);
+  }, [searchParams, ascending]);
 
   // Data fetch
   const fetchStations = async () => {
