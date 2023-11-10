@@ -3,17 +3,18 @@ const APIFeatures = require('../utils/apiFeatures');
 
 exports.getAllStations = async (req, res, next) => {
   try {
-    const { page, limit } = req.query;
+    const { page, limit, search } = req.query;
     const values = [page, limit];
     const query = 'SELECT * FROM station';
+    let countQuery = 'SELECT count(*) as count FROM station';
 
-    const stationCount = await db.query(
-      'SELECT count(*) as count FROM station',
-    );
-
-    if (req.query.search) {
+    if (search) {
       values.push(`%${req.query.search}%`);
+      countQuery += ' WHERE station_name ILIKE $1';
     }
+
+    const stationCountResult = await db.query(countQuery, values.slice(2));
+    const stationCount = stationCountResult.rows[0].count;
 
     const features = new APIFeatures(query, req.query, 'station_name')
       .search()
@@ -21,12 +22,12 @@ exports.getAllStations = async (req, res, next) => {
       .paginate();
 
     const results = await db.query(features.query, values);
+
     res.status(200).json({
       status: 'success',
       data: {
         stations: results.rows,
-        stationCount: stationCount.rows,
-        rowCount: results.rowCount,
+        stationCount,
       },
     });
   } catch (err) {
