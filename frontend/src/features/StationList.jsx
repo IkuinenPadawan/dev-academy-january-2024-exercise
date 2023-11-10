@@ -32,7 +32,7 @@ function StationList() {
     const search = searchParams.get("search");
     const stations = await getStations(page, 10, order, search);
     setData(stations);
-    setCount(stations.stationCount[0].count);
+    setCount(stations.stationCount);
     setIsLoading(false);
   };
 
