@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 // Custom components
 import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
+import Sort from "../ui/Sort";
 
 // API functions
 import { getStations } from "../services/apiStation";
@@ -14,6 +15,7 @@ function StationList() {
   const [count, setCount] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [ascending, setAscending] = useState(true);
 
   // Set current page number
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
@@ -21,11 +23,12 @@ function StationList() {
   // Fetch stations data on searchParam change
   useEffect(() => {
     fetchStations();
-  }, [searchParams]);
+  }, [searchParams, ascending]);
 
   // Data fetch
   const fetchStations = async () => {
-    const stations = await getStations(page);
+    const order = ascending ? "asc" : "desc";
+    const stations = await getStations(page, 10, order);
     setData(stations);
     setCount(stations.stationCount[0].count);
     setIsLoading(false);
@@ -33,6 +36,7 @@ function StationList() {
 
   return (
     <div>
+      <Sort ascending={ascending} setAscending={setAscending} />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
         <ul role="list" className="m-3 flex flex-col gap-2">
