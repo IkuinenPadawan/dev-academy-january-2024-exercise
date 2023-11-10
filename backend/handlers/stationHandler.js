@@ -2,14 +2,22 @@ const db = require('../database/index');
 
 exports.getAllStations = async (req, res, next) => {
   try {
-    // Pagination
     const { page, limit } = req.query;
-    const query = `SELECT * FROM station LIMIT $2 OFFSET (($1 - 1) * $2)`;
+    let query = 'SELECT * FROM station';
+
+    // Sort
+    if (req.query.sortBy) {
+      query += ` ORDER BY ${req.query.sortBy}`;
+    }
+
+    // Pagination
+    query += ` LIMIT $2 OFFSET (($1 - 1) * $2)`;
     const stationCount = await db.query(
       'SELECT count(*) as count FROM station',
     );
 
     const results = await db.query(query, [page, limit]);
+
     res.status(200).json({
       status: 'success',
       data: {
