@@ -1,7 +1,17 @@
 class APIFeatures {
-  constructor(query, queryString) {
+  constructor(query, queryString, searchColumn) {
     this.query = query;
     this.queryString = queryString;
+    this.searchColumn = searchColumn;
+  }
+
+  search() {
+    if (this.queryString.search) {
+      this.query += ` WHERE ${this.searchColumn} ILIKE $3`;
+    }
+
+    // return this for chaining
+    return this;
   }
 
   sort() {
