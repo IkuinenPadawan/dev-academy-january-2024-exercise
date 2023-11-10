@@ -2,7 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 
 // Custom components
-import LocationIcon from "..ui/LocationIcon";
+import LocationIcon from "../ui/LocationIcon";
 
 // API functions
 import { getStation, getJourneyStats } from "../services/apiStation";
