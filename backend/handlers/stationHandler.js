@@ -4,15 +4,23 @@ const APIFeatures = require('../utils/apiFeatures');
 exports.getAllStations = async (req, res, next) => {
   try {
     const { page, limit } = req.query;
+    const values = [page, limit];
     const query = 'SELECT * FROM station';
 
     const stationCount = await db.query(
       'SELECT count(*) as count FROM station',
     );
 
-    const features = new APIFeatures(query, req.query).paginate().sort();
-    const results = await db.query(features.query, [page, limit]);
+    if (req.query.search) {
+      values.push(`%${req.query.search}%`);
+    }
 
+    const features = new APIFeatures(query, req.query, 'station_name')
+      .search()
+      .sort()
+      .paginate();
+
+    const results = await db.query(features.query, values);
     res.status(200).json({
       status: 'success',
       data: {
