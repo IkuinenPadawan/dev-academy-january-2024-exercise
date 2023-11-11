@@ -17,7 +17,7 @@ function MobileFooter() {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-slate-700 p-4 flex justify-around items-center text-xs lg:hidden">
+    <footer className="fixed bottom-0 left-0 w-full bg-slate-800 p-4 flex justify-around items-center text-xs lg:hidden">
       {isRootPath ? (
         <></>
       ) : (
