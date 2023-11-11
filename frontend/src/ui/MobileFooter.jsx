@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 
 import SearchIcon from "./SearchIcon";
+import ArrowIcon from "./ArrowIcon";
 
 function MobileFooter() {
   const navigate = useNavigate();
@@ -17,21 +18,7 @@ function MobileFooter() {
         className="text-white flex flex-col justify-center items-center"
         onClick={() => navigate(-1)}
       >
-        <svg
-          className="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13 5H1m0 0l4-4m0 8l-4-4"
-          />
-        </svg>
+        <ArrowIcon direction="left" />
         Go Back
       </button>
 
