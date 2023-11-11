@@ -11,12 +11,10 @@ export async function getStations(page = 1, limit = 10, order = "asc", search) {
   }
 
   const res = await fetch(url);
-  console.log(res);
-
   if (!res.ok) throw Error("Failed getting stations");
 
   const { data } = await res.json();
-  console.log(data);
+
   return data;
 }
 
