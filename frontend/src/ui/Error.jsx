@@ -10,8 +10,7 @@ function Error() {
       <p>{error.data || error.message}</p>
       <button
         className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
-        onClick={() => navigate(-1)}
-      >
+        onClick={() => navigate(-1)}>
         &larr; Go back
       </button>
     </div>
