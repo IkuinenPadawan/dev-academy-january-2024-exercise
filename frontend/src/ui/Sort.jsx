@@ -8,8 +8,7 @@ function Sort({ ascending, setAscending }) {
       data-dropdown-toggle="dropdown"
       className="my-1 bg-blue-500 hover:bg-blue-400 rounded-md font-medium text-sm px-4 py-2 text-center inline-flex items-center"
       type="button"
-      onClick={() => setAscending(!ascending)}
-    >
+      onClick={() => setAscending(!ascending)}>
       Sort by station name{" "}
       {ascending ? (
         <svg
@@ -17,8 +16,7 @@ function Sort({ ascending, setAscending }) {
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 10 6"
-        >
+          viewBox="0 0 10 6">
           <path
             stroke="currentColor"
             strokeLinecap="round"
@@ -33,8 +31,7 @@ function Sort({ ascending, setAscending }) {
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 10 6"
-        >
+          viewBox="0 0 10 6">
           <path
             stroke="currentColor"
             strokeLinecap="round"

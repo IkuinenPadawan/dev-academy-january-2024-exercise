@@ -1,3 +1,4 @@
+// Import modules
 import PropTypes from "prop-types";
 
 function SearchIcon({ className }) {
@@ -7,8 +8,7 @@ function SearchIcon({ className }) {
       height="20"
       fill="currentColor"
       className={className}
-      aria-hidden="true"
-    >
+      aria-hidden="true">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
