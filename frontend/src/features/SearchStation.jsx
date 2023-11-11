@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 function SearchStation() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const inputRef = useRef(null);
 
   const search = searchParams.get("search") || "";
 
@@ -43,6 +45,7 @@ function SearchStation() {
         onChange={handleSearchChange}
         className=" focus:ring-2 focus:ring-blue-500 focus:outline-none caret-blue-600 appearance-none w-full text-sm leading-6 text-slate-50 placeholder-slate-400 bg-slate-700 rounded shadow-md py-2 pl-10"
         type="text"
+        ref={inputRef}
       />
     </div>
   );
