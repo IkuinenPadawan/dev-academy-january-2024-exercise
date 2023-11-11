@@ -1,6 +1,8 @@
+// Import modules
 import { useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
+// Custom components
 import SearchIcon from "../ui/icons/SearchIcon";
 
 function SearchStation() {

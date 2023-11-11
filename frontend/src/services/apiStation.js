@@ -1,7 +1,6 @@
 // API base URL
 const API_URL = "http://localhost:3000/api";
 
-// GET stations
 export async function getStations(page = 1, limit = 10, order = "asc", search) {
   let url = `${API_URL}/stations?page=${page}&limit=${limit}&sortBy=station_name&order=${order}`;
 
@@ -18,7 +17,6 @@ export async function getStations(page = 1, limit = 10, order = "asc", search) {
   return data;
 }
 
-// GET station by ID
 export async function getStation(id) {
   const res = await fetch(`${API_URL}/stations/${id}`);
   if (!res.ok) throw Error(`Couldn't find stations #${id}`);
@@ -27,7 +25,6 @@ export async function getStation(id) {
   return data;
 }
 
-// GET Journey stats by station ID
 export async function getJourneyStats(id) {
   const res = await fetch(`${API_URL}/journeys/stationstats/${id}`);
   if (!res.ok) throw Error(`Couldn't find stats #${id}`);

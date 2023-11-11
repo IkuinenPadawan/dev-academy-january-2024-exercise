@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
-
 // Module imports
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function StationItem({ station }) {

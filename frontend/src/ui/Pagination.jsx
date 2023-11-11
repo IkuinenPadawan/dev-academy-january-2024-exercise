@@ -2,15 +2,12 @@
 import PropTypes from "prop-types";
 
 function Pagination({ count, searchParams, setSearchParams }) {
-  // Get current page
   const currentPage = !searchParams.get("page")
     ? 1
     : Number(searchParams.get("page"));
 
-  // Get page count
   const pageCount = Math.ceil(count / 10);
 
-  // Set next page
   function nextPage() {
     const next = currentPage === pageCount ? currentPage : currentPage + 1;
 
@@ -18,7 +15,6 @@ function Pagination({ count, searchParams, setSearchParams }) {
     setSearchParams(searchParams);
   }
 
-  // Set previous page
   function prevPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
 
@@ -44,15 +40,13 @@ function Pagination({ count, searchParams, setSearchParams }) {
         <button
           className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={prevPage}
-          disabled={currentPage === 1}
-        >
+          disabled={currentPage === 1}>
           {"<"} Previous
         </button>
         <button
           className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={nextPage}
-          disabled={currentPage === pageCount}
-        >
+          disabled={currentPage === pageCount}>
           Next {">"}
         </button>
       </div>
