@@ -33,7 +33,7 @@ exports.getAllStations = async (req, res, next) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
-      message: err,
+      message: 'No stations were found',
     });
   }
   next();
@@ -53,7 +53,7 @@ exports.getStation = async (req, res, next) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
-      message: err,
+      message: 'A station with the specified ID was not found.',
     });
   }
   next();

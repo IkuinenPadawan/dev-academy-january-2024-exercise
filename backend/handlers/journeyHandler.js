@@ -32,7 +32,7 @@ exports.getJourneyStats = async (req, res, next) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
-      message: { err },
+      message: 'Statistics with the specified station ID were not found.',
     });
   }
   next();
