@@ -35,7 +35,7 @@ function StationView() {
     <div className="max-w-full md:max-w-3xl m-4 pb-4 bg-slate-700 rounded-xl shadow-md text-center">
       <img
         className="rounded-t-xl"
-        src="https://images.pexels.com/photos/34646/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        src="../../public/bike_station.jpg"
         alt="Image of a bike station"
       />
       <div className="flex flex-row my-5 justify-center items-center">
