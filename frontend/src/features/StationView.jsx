@@ -32,7 +32,7 @@ function StationView() {
   );
 
   return (
-    <div className="max-w-full md:max-w-3xl m-4 pb-4 bg-slate-700 rounded-xl shadow-md text-center">
+    <div className="max-w-full mx-auto md:max-w-3xl m-4 pb-4 bg-slate-700 rounded-xl shadow-md text-center">
       <img
         className="rounded-t-xl"
         src="../../public/bike_station.jpg"
@@ -41,7 +41,7 @@ function StationView() {
       <div className="flex flex-row my-5 justify-center items-center">
         <LocationIcon />
         <div>
-          <h1 className="text-2xl text-slate-50">{station_name}</h1>
+          <h1 className="text-2xl">{station_name}</h1>
           <h2 className="text-lg text-slate-400">{station_address}</h2>
         </div>
       </div>
@@ -50,27 +50,25 @@ function StationView() {
           <h2 className="text-2xl font-extrabold text-blue-300">
             {numberOfJourneysStarting}
           </h2>
-          <h2 className="text-lg text-slate-50">Journeys starting</h2>
+          <h2 className="text-lg ">Journeys starting</h2>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-extrabold text-blue-300">
             {numberOfJourneysEnding}
           </h2>
-          <h2 className="text-lg text-slate-50">Journeys ending</h2>
+          <h2 className="text-lg">Journeys ending</h2>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-extrabold text-blue-300">
             {averageDistanceOfJourneysStarting} km
           </h2>
-          <h2 className="text-lg text-slate-50">
-            Average distance traveled from
-          </h2>
+          <h2 className="text-lg">Average distance traveled from</h2>
         </div>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-extrabold text-blue-300">
             {averageDurationOfJourneysStarting} min
           </h2>
-          <h2 className="text-lg text-slate-50">Average time traveled from</h2>
+          <h2 className="text-lg">Average time traveled from</h2>
         </div>
       </dl>
     </div>
