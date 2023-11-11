@@ -1,3 +1,4 @@
+// Import modules
 import PropTypes from "prop-types";
 
 function SearchIcon({ className }) {
