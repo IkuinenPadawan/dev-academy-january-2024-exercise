@@ -40,15 +40,13 @@ function Pagination({ count, searchParams, setSearchParams }) {
         <button
           className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={prevPage}
-          disabled={currentPage === 1}
-        >
+          disabled={currentPage === 1}>
           {"<"} Previous
         </button>
         <button
           className="font-bold rounded-r py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={nextPage}
-          disabled={currentPage === pageCount}
-        >
+          disabled={currentPage === pageCount}>
           Next {">"}
         </button>
       </div>
