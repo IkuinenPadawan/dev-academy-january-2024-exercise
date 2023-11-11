@@ -3,8 +3,8 @@ const API_URL = "http://localhost:3000/api";
 export async function getStations(page = 1, limit = 10, order = "asc", search) {
   let url = `${API_URL}/stations?page=${page}&limit=${limit}&sortBy=station_name&order=${order}`;
 
-  // Append search if string
-  if (typeof search === "string") {
+  // Append search if not null
+  if (search) {
     url += `&search=${search}`;
   }
 
