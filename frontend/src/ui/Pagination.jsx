@@ -22,7 +22,7 @@ function Pagination({ count, searchParams, setSearchParams }) {
   if (pageCount <= 1) return null;
 
   return (
-    <div className="mx-3 flex flex-col justify-end md:flex-row md:justify-between">
+    <div className="mx-3 flex flex-col justify-end sm:flex-row sm:justify-between">
       {" "}
       <p className="flex gap-1 justify-end">
         Showing{" "}
