@@ -23,7 +23,7 @@ export async function getStations(page = 1, limit = 10, order = "asc", search) {
 // GET station by ID
 export async function getStation(id) {
   const res = await fetch(`${API_URL}/stations/${id}`);
-  if (!res.ok) throw Error(`Couldn't find order #${id}`);
+  if (!res.ok) throw Error(`Couldn't find stations #${id}`);
 
   const { data } = await res.json();
   return data;
