@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // Module imports
 import { Link } from "react-router-dom";
 
@@ -17,5 +19,9 @@ function StationItem({ station }) {
     </Link>
   );
 }
+
+StationItem.propTypes = {
+  station: PropTypes.object.isRequired,
+};
 
 export default StationItem;

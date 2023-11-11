@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function SearchIcon({ className }) {
   return (
     <svg
@@ -15,5 +17,9 @@ function SearchIcon({ className }) {
     </svg>
   );
 }
+
+SearchIcon.propTypes = {
+  className: PropTypes.string.isRequired,
+};
 
 export default SearchIcon;

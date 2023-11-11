@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Pagination({ count, searchParams, setSearchParams }) {
   const currentPage = !searchParams.get("page")
     ? 1
@@ -51,5 +53,11 @@ function Pagination({ count, searchParams, setSearchParams }) {
     </div>
   );
 }
+
+Pagination.propTypes = {
+  count: PropTypes.number.isRequired,
+  searchParams: PropTypes.string,
+  setSearchParams: PropTypes.func,
+};
 
 export default Pagination;
