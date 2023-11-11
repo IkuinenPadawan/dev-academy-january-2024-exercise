@@ -62,7 +62,7 @@ function Pagination({ count, searchParams, setSearchParams }) {
 
 Pagination.propTypes = {
   count: PropTypes.number.isRequired,
-  searchParams: PropTypes.string,
+  searchParams: PropTypes.object,
   setSearchParams: PropTypes.func,
 };
 
