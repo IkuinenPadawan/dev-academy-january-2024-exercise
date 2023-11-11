@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Sort({ ascending, setAscending }) {
   return (
     <button
@@ -44,5 +46,10 @@ function Sort({ ascending, setAscending }) {
     </button>
   );
 }
+
+Sort.propTypes = {
+  ascending: PropTypes.bool.isRequired,
+  setAscending: PropTypes.func.isRequired,
+};
 
 export default Sort;

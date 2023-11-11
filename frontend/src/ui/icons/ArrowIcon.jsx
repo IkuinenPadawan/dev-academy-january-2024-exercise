@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function ArrowIcon({ direction }) {
   return (
     <div>
@@ -23,5 +25,9 @@ function ArrowIcon({ direction }) {
     </div>
   );
 }
+
+ArrowIcon.propTypes = {
+  direction: PropTypes.string.isRequired,
+};
 
 export default ArrowIcon;
