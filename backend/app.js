@@ -1,5 +1,8 @@
 const express = require('express');
 
+const swaggerUI = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+
 const stationRouter = require('./routes/stationRoutes');
 const journeyRouter = require('./routes/journeyRoutes');
 
