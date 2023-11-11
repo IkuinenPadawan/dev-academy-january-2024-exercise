@@ -49,7 +49,7 @@ function SearchStation() {
   }, [searchParams, setSearchParams]);
 
   return (
-    <div className="group relative bg-slate-700 m-3">
+    <div className="group relative bg-slate-700 my-3">
       <SearchIcon className="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-600" />
 
       <input

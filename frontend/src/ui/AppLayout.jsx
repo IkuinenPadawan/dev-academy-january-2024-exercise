@@ -15,7 +15,7 @@ function AppLayout() {
       {isLoading && <Loader />}
 
       <Header />
-      <main>
+      <main className="mx-3">
         <Outlet />
       </main>
       <MobileFooter />

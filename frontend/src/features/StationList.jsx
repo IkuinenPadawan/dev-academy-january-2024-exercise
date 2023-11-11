@@ -42,7 +42,7 @@ function StationList() {
       <Sort ascending={ascending} setAscending={setAscending} />
       {isLoading && <p>Loading...</p>}
       {!isLoading && (
-        <ul role="list" className="m-3 flex flex-col gap-2">
+        <ul role="list" className="my-3 flex flex-col gap-2">
           {data.stations.map((station) => (
             <StationItem station={station} key={station.id} />
           ))}
