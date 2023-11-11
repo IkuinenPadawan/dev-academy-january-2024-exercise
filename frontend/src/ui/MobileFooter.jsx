@@ -14,7 +14,7 @@ function MobileFooter() {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full bg-slate-700 p-4 flex justify-around items-center text-xs sm:hidden">
+    <footer className="fixed bottom-0 left-0 w-full bg-slate-700 p-4 flex justify-around items-center text-xs lg:hidden">
       <button
         className="flex flex-col justify-center items-center"
         onClick={() => navigate(-1)}
