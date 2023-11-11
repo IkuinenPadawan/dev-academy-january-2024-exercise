@@ -1,7 +1,15 @@
+// Import modules
+import { useNavigate } from "react-router-dom";
+
 function MobileFooter() {
+  const navigate = useNavigate();
+
   return (
     <footer className="fixed bottom-0 left-0 w-full bg-slate-700 p-4 flex justify-around items-center text-xs sm:hidden">
-      <button className="text-white flex flex-col justify-center items-center">
+      <button
+        className="text-white flex flex-col justify-center items-center"
+        onClick={() => navigate(-1)}
+      >
         <svg
           className="w-5 h-5"
           aria-hidden="true"
