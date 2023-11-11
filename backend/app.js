@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 
+const AppError = require('./utils/appError');
 const stationRouter = require('./routes/stationRoutes');
 const journeyRouter = require('./routes/journeyRoutes');
 
@@ -33,10 +34,7 @@ app.use('/api/journeys', journeyRouter);
 
 // Handle unhandled routes
 app.all('*', (req, res, next) => {
-  res.status(404).json({
-    status: 'fail',
-    message: `Can't find ${req.originalUrl} on this server!`,
-  });
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
 // Global error handling
