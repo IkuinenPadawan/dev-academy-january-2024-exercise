@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 function SearchStation() {
@@ -22,6 +22,29 @@ function SearchStation() {
       { replace: true }
     );
   };
+
+  // Function to focus on the input
+  const focusSearchInput = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  useEffect(() => {
+    // Check if the flag is present in the URL
+    const activateSearch = searchParams.get("activateSearch");
+    if (activateSearch) {
+      focusSearchInput();
+      // Clear the flag in the URL to avoid focusing on subsequent renders
+      setSearchParams(
+        (params) => {
+          params.delete("activateSearch");
+          return params;
+        },
+        { replace: true }
+      );
+    }
+  }, [searchParams, setSearchParams]);
 
   return (
     <div className="group relative bg-slate-700 m-3">
