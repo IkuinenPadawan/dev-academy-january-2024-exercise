@@ -1,3 +1,4 @@
+// Module Imports
 import PropTypes from "prop-types";
 
 function Sort({ ascending, setAscending }) {
