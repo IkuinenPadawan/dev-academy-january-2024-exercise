@@ -1,18 +1,24 @@
+// Module imports
 import PropTypes from "prop-types";
 
 function Pagination({ count, searchParams, setSearchParams }) {
+  // Get current page
   const currentPage = !searchParams.get("page")
     ? 1
     : Number(searchParams.get("page"));
 
+  // Get page count
   const pageCount = Math.ceil(count / 10);
 
+  // Set next page
   function nextPage() {
     const next = currentPage === pageCount ? currentPage : currentPage + 1;
 
     searchParams.set("page", next);
     setSearchParams(searchParams);
   }
+
+  // Set previous page
   function prevPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
 
@@ -56,7 +62,7 @@ function Pagination({ count, searchParams, setSearchParams }) {
 
 Pagination.propTypes = {
   count: PropTypes.number.isRequired,
-  searchParams: PropTypes.string,
+  searchParams: PropTypes.object,
   setSearchParams: PropTypes.func,
 };
 
