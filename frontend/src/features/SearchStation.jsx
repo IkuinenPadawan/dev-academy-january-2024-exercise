@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import SearchIcon from "../ui/SearchIcon";
+import SearchIcon from "../ui/icons/SearchIcon";
 
 function SearchStation() {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -2,8 +2,8 @@
 import { useNavigate } from "react-router-dom";
 
 // Custom components
-import SearchIcon from "./SearchIcon";
-import ArrowIcon from "./ArrowIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ArrowIcon from "./icons/ArrowIcon";
 
 function MobileFooter() {
   const navigate = useNavigate();
