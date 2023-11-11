@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 function MobileFooter() {
   const navigate = useNavigate();
 
+  const activateSearch = () => {
+    // Pass a flag through the URL to indicate that it's coming from the search button
+    navigate("/?activateSearch=true");
+  };
+
   return (
     <footer className="fixed bottom-0 left-0 w-full bg-slate-700 p-4 flex justify-around items-center text-xs sm:hidden">
       <button
@@ -28,7 +33,10 @@ function MobileFooter() {
         Go Back
       </button>
 
-      <button className="text-white flex flex-col justify-center items-center">
+      <button
+        className="text-white flex flex-col justify-center items-center"
+        onClick={activateSearch}
+      >
         <svg
           width="20"
           height="20"
