@@ -5,7 +5,7 @@ function Error() {
   const error = useRouteError();
 
   return (
-    <div className="flex flex-col gap-2 text-slate-50 m-3">
+    <div className="flex flex-col gap-2 m-3">
       <h1 className="font-2xl font-bold">Something went wrong 😢</h1>
       <p>{error.data || error.message}</p>
       <button

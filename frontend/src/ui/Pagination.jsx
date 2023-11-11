@@ -22,7 +22,7 @@ function Pagination({ count, searchParams, setSearchParams }) {
   if (pageCount <= 1) return null;
 
   return (
-    <div className="mx-3 flex flex-col md:flex-row md:justify-between text-slate-50">
+    <div className="mx-3 flex flex-col md:flex-row md:justify-between">
       {" "}
       <p className="flex gap-1">
         Showing{" "}
@@ -32,7 +32,7 @@ function Pagination({ count, searchParams, setSearchParams }) {
         </span>{" "}
         of <span className="font-bold">{count}</span> results
       </p>
-      <div className="inline-flex text-slate-50 text-sm">
+      <div className="inline-flex text-sm">
         <button
           className="font-bold rounded-l py-2 bg-blue-400 hover:bg-blue-300 px-2 disabled:bg-slate-400"
           onClick={prevPage}
