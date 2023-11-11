@@ -4,6 +4,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 // Custom components
 import Header from "./Header";
 import Loader from "./Loader";
+import MobileFooter from "./MobileFooter";
 
 function AppLayout() {
   const navigation = useNavigation();
@@ -17,6 +18,7 @@ function AppLayout() {
       <main>
         <Outlet />
       </main>
+      <MobileFooter />
     </div>
   );
 }
