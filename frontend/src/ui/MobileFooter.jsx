@@ -1,6 +1,7 @@
 // Import modules
 import { useNavigate } from "react-router-dom";
 
+// Custom components
 import SearchIcon from "./SearchIcon";
 import ArrowIcon from "./ArrowIcon";
 
