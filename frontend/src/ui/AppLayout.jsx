@@ -11,7 +11,7 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className="layout">
+    <div className="layout pb-20">
       {isLoading && <Loader />}
 
       <Header />
