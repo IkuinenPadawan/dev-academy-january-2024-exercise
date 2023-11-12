@@ -30,8 +30,7 @@ docker-compose down
 # Screenshots/videos
 
 ### Frontend demonstration
-
-![](https://https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/frontend_demonstration.gif)
+![](https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/blob/main/frontend_demonstration.gif)
 
 # Features
 
