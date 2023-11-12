@@ -30,7 +30,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/api', swaggerUI.serve, swaggerUI.setup(specs));
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs));
 app.use('/api/stations', stationRouter);
 app.use('/api/journeys', journeyRouter);
 
