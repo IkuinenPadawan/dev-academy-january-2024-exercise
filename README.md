@@ -14,7 +14,7 @@ This is a pre-assignment for Solita Dev Academy January 2024.
 docker compose up --build --renew-anon-volumes -d
 ```
 
-Please note that it might take a while for that to run
+##### Please note that it might take several minutes for the environment and database to be fully ready
 
 4. Access app:
 
