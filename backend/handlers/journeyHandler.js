@@ -19,11 +19,12 @@ exports.getJourneyStats = catchAsync(async (req, res, next) => {
   ]);
   const durStarting = await db.query(durJStartingQuery, [req.params.stationId]);
 
+  // Error checks for this handler should be refactored
   if (
     numStarting.rows[0].count === '0' ||
     numEnding.rows[0].count === '0' ||
-    distStarting.rows[0].avg ||
-    durStarting.rows[0].avg
+    numEnding.rows[0].avg === null ||
+    numEnding.rows[0].avg === null
   ) {
     return next(
       new AppError(
@@ -41,4 +42,5 @@ exports.getJourneyStats = catchAsync(async (req, res, next) => {
       averageDurationOfJourneysStarting: durStarting.rows[0].avg,
     },
   });
+  next();
 });
