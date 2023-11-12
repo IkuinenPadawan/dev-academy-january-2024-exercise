@@ -27,7 +27,11 @@ Please note that it might take a while for that to run
 docker-compose down
 ```
 
-# Screenshots
+# Screenshots/videos
+
+### Frontend demonstration
+
+![](https://https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/frontend_demonstration.gif)
 
 # Features
 
