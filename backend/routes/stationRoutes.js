@@ -84,7 +84,7 @@ const router = express.Router();
  *       404:
  *         description: No stations were found
  */
-router.route('/').get(stationHandler.getAllStations);
+router.route('/').get(stationHandler.getStations);
 
 /**
  * @swagger
