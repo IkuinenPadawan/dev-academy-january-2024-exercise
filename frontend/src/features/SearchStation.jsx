@@ -19,6 +19,7 @@ function SearchStation() {
         if (e.target.value.trim() === "") {
           searchParams.delete("search");
         } else {
+          prev.set("page", 1);
           prev.set("search", e.target.value);
           return prev;
         }
