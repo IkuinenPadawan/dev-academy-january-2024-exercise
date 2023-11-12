@@ -19,6 +19,7 @@ docker compose up --build --renew-anon-volumes -d
 4. Access app:
 
    - Frontend: http://localhost:5173
+      - ##### Refresh frontend page if it is still loading (database is not fully setup)
    - Backend: http://localhost:3000/api-docs (this endpoint opens swagger ui api documentation)
 
 5. When finished you can bring containers down with this command line command on repository root:
