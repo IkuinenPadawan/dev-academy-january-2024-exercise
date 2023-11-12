@@ -29,8 +29,15 @@ docker-compose down
 
 # Screenshots/videos
 
-### Frontend demonstration
+### Frontend demonstration GIF
 <img src="https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/blob/main/frontend_demonstration.gif" width="300">
+
+### Backend Swagger API documentation screenshots
+#### Overview
+<img src="https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/blob/main/api_doc_screenshot.png">
+
+#### Get Station by ID
+<img src="https://github.com/IkuinenPadawan/dev-academy-january-2024-exercise/blob/main/get_station_doc_screenshot.png">
 
 # Features
 
