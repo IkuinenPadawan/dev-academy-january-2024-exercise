@@ -7,6 +7,7 @@ import StationItem from "./StationItem";
 import Pagination from "../ui/Pagination";
 import Sort from "../ui/Sort";
 import SearchStation from "./SearchStation";
+import Loader from "../ui/Loader";
 
 // API functions
 import { getStations } from "../services/apiStation";
@@ -40,7 +41,7 @@ function StationList() {
     <div>
       <SearchStation />
       <Sort ascending={ascending} setAscending={setAscending} />
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {!isLoading && (
         <ul role="list" className="my-3 flex flex-col gap-2">
           {data.stations.map((station) => (
