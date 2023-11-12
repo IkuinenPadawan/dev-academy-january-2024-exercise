@@ -3,7 +3,7 @@ const APIFeatures = require('../utils/apiFeatures');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-exports.getAllStations = catchAsync(async (req, res, next) => {
+exports.getStations = catchAsync(async (req, res, next) => {
   const { page, limit, search } = req.query;
   const values = [page, limit];
   const query = 'SELECT * FROM station';
