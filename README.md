@@ -25,7 +25,7 @@ docker compose up --build --renew-anon-volumes -d
 5. When finished you can bring containers down with this command line command on repository root:
 
 ```
-docker-compose down
+docker compose down
 ```
 
 # Screenshots/videos
