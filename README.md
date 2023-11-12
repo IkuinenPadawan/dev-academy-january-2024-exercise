@@ -18,7 +18,7 @@ Please note that it might take a while for that to run
 
 4. Access app:
 
-   - Frontend: http://localhost:5713
+   - Frontend: http://localhost:5173
    - Backend: http://localhost:3000/api-docs (this endpoint opens swagger ui api documentation)
 
 5. When finished you can bring containers down with this command line command on repository root:
